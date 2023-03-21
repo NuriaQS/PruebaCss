@@ -8,42 +8,42 @@
     <title>pruebasCss</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="javaS.js">
+    
+    <link rel="script" href="javaS.js">
 </head>
+<script>
+    function guardar(){
+        var id = document.getElementById("id").value;
+    var nombre = document.getElementById("nombre").value;
+    var precio = document.getElementById("precio").value;
+    var pasillo = document.getElementById("pasillo").value;
 
+    var fila = "<tr><th>" + id + "</th><td>" + nombre + "</td><td>" + precio + "</td><td>" + pasillo + "</td></tr>";
+
+    var linea = document.createElement("tr");
+                linea.innerHTML = fila;
+    document.getElementById("tabla").appendChild(linea);
+}
+</script>
 <body>
     <div style="margin-left: 1%;">
         <h1>Almacen tienda</h1>
         <div class="container row align-items-start">
-            <div class="col">
-                <p>Nombre del producto <input type="text" name="nombre" id="nombre"></p>
-            </div>
+            <div class="col"><p>Identificador del producto <input type="text" name="id" id="id"></p></div>
         </div>
         <div class="container row align-items-start">
-            <div class="col">
-                <p>Precio del producto <input type="text" name="precio" id="precio"></p>
-            </div>
+            <div class="col"><p>Nombre del producto <input type="text" name="nombre" id="nombre"></p></div>
         </div>
-        <div>
-            <div class="container row align-items-start">
-                <div class="col">
-                    <p>Pasillo del producto <input type="text" name="pasillo" id="pasillo"></p>
-                </div>
-            </div>
-            <div>
-                <div class="container row align-items-start">
-                    <div class="col">
-                        <p>Identificador del producto <input type="text" name="id" id="id"></p>
-                    </div>
-                </div>
-                <div>
+        <div class="container row align-items-start">
+            <div class="col"><p>Precio del producto <input type="text" name="precio" id="precio"></p></div>
         </div>
-        <button type="button" class="btn btn-secondary btn-group-sm" id="insertar" onclick="insertar()">Insertar</button><br>
+        <div class="container row align-items-start">
+            <div class="col"><p>Pasillo del producto <input type="text" name="pasillo" id="pasillo"></p></div>
+        </div>
+    </div>
+        <button type="button" class="btn btn-secondary btn-group-sm" OnClick="guardar()">Insertar</button><br>
         <br>
-        <table class="table table-primary ">
+        <table class="table table-primary">
             <thead>
                 <tr>
                     <th>Nombre del producto</th>
@@ -54,26 +54,28 @@
             </thead>
             <tbody id="tabla">
                 <tr>
-                    <th>Platanos</th>
+                    <th>001</th>
+                    <td>Platanos</td>
                     <td>1.25€/KG</td>
                     <td>P2</td>
-                    <td>001</td>
                 </tr>
                 <tr>
-                    <th>Manzanas</th>
+                    <th>002</th>
+                    <td>Manzanas</td>
                     <td>2.00€/KG</td>
                     <td>P2</td>
-                    <td>002</td>
                 </tr>
                 <tr>
-                    <th>Peras</th>
+                    <th>003</th>
+                    <td>Peras</td>
                     <td>0.75€/KG</td>
                     <td>P2</td>
-                    <td>003</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
-
 </html>
