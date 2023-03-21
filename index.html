@@ -30,6 +30,7 @@
   <header class="navbar sticky-top navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="logo.png" alt="logo"></a>
+      <h1 class="text-bg-dark p-1 text-center">Almacen tienda</h1>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -53,31 +54,33 @@
     </div>
   </header>
   <!-- Insertar productos -->
-  <h1 class="text-bg-secondary p-3 text-center">Almacen tienda</h1>
-  <div style="margin-left: 1%;">
-    <div class="container row align-items-start">
-      <div class="col">
-        <p>Identificador del producto <input type="text" name="id" id="id"></p>
-      </div>
-    </div>
-    <div class="container row align-items-start">
-      <div class="col">
-        <p>Nombre del producto <input type="text" name="nombre" id="nombre"></p>
-      </div>
-    </div>
-    <div class="container row align-items-start">
-      <div class="col">
-        <p>Precio del producto <input type="text" name="precio" id="precio"></p>
-      </div>
-    </div>
-    <div class="container row align-items-start">
-      <div class="col">
-        <p>Pasillo del producto <input type="text" name="pasillo" id="pasillo"></p>
-      </div>
-    </div>
+  
+  <div style="margin-left: 1%; width: 40%;" class="card border-0">
+    <table class="table table-borderless">
+          <tbody class="border border-0">
+            <tr>
+              <td><p>Identificador del producto</p></td>
+              <td style="width:55%;"><input type="text" name="id" id="id" style="width: 100%;"></td>
+            </tr>
+            <tr>
+              <td><p>Nombre del producto</p></td>
+              <td><input type="text" name="nombre" id="nombre" style="width: 100%;"></td>
+            </tr>
+            <tr>
+              <td><p>Precio del producto</p></td>
+              <td><input type="text" name="precio" id="precio" style="width: 100%;"></td>
+            </tr>
+            <tr>
+              <td><p>Pasillo del producto</p></td>
+              <td><p><input type="text" name="pasillo" id="pasillo" style="width: 100%;"></td>
+            </tr>
+          </tbody>
+    </table>
+
+    <button type="button" class="btn btn-outline-primary" OnClick="guardar()">Insertar</button><br>
   </div>
-  <button type="button" class="btn btn-outline-primary" OnClick="guardar()">Insertar</button><br>
   <br>
+  <!-- inicio tabla -->
   <table class="table">
     <h2 class="text-bg-light p-3 text-center">Tabla de productos</h2>
     <thead class="table-dark">
