@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="estilos.css">
   <title>pruebasCss</title>
 </head>
+
 <script>
   function guardar() {
     var id = document.getElementById("id").value;
@@ -92,14 +93,15 @@
     </div>
 </section>
   <!-- Insertar productos -->
-  <div style="margin-left: 1%; width: 40%;" class="card border-0">
+  <div style="margin-left: 15%; width: 60%;" class="card border-0">
+    <h1 style="text-align: center;">Almacen de productos</h1>
     <table class="table table-borderless">
       <tbody class="border border-0">
         <tr>
           <td>
             <p>Identificador del producto</p>
           </td>
-          <td style="width:55%;"><input type="text" name="id" id="id" style="width: 100%;"></td>
+          <td style="width:75%;"><input type="text" name="id" id="id" style="width: 100%;"></td>
         </tr>
         <tr>
           <td>
@@ -128,37 +130,68 @@
   </div>
   <br>
   <!-- inicio tabla -->
-  <table class="table">
+  <div class="container-fluid" style="background-image: url(fondoTabla.jpg); height: 10%;">
+  <div style="margin-left: 15%; width: 60%;" class="card border-0">
     <h2 class="text-bg-light p-3 text-center">Tabla de productos</h2>
-    <thead class="table-dark">
-      <tr>
-        <th>ID</th>
-        <th>Nombre del producto</th>
-        <th>Precio del producto</th>
-        <th>Pasillo del producto</th>
-      </tr>
-    </thead>
-    <tbody id="tabla">
-      <tr>
-        <th>001</th>
-        <td>Platanos</td>
-        <td>1.25€/KG</td>
-        <td>P2</td>
-      </tr>
-      <tr>
-        <th>002</th>
-        <td>Manzanas</td>
-        <td>2.00€/KG</td>
-        <td>P2</td>
-      </tr>
-      <tr>
-        <th>003</th>
-        <td>Peras</td>
-        <td>0.75€/KG</td>
-        <td>P2</td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table rounded">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre del producto</th>
+          <th>Precio del producto</th>
+          <th>Pasillo del producto</th>
+        </tr>
+      </thead>
+      <tbody id="tabla">
+        <tr>
+          <th>001</th>
+          <td>Platanos</td>
+          <td>1.25€/KG</td>
+          <td>P2</td>
+        </tr>
+        <tr>
+          <th>002</th>
+          <td>Manzanas</td>
+          <td>2.00€/KG</td>
+          <td>P2</td>
+        </tr>
+        <tr>
+          <th>003</th>
+          <td>Peras</td>
+          <td>0.75€/KG</td>
+          <td>P2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  </div>
+  <div class="container-fluid" style="background-color: #161515;color: white;" >
+    <footer class="row row-cols-5 py-3 my-5 border-top">
+      <div class="col"></div>
+      <div class="col-1">
+        <img src="logo.png" alt="logo" style="margin-top: 40%;">
+      </div>
+      <div class="col-1"></div>
+      <div class="col">
+        <h5>Menu</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Almacen</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Productos</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contanco</a></li>
+        </ul>
+      </div>
+  
+      <div class="col">
+        <h5>Contacto</h5>
+        <ul class="nav flex-column">
+          <p>Telefono: 9695478412</p>
+          <p>Correo: hola@adios.com</p>
+          <p>Direccion: C/MiCasa Nº: 1</p>
+        </ul>
+      </div>
+    </footer>
+</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
