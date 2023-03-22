@@ -29,11 +29,12 @@
   <!-- Menu -->
   <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="logo.png" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#"><img src="logoTienda.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="menu">
+      <div class="collapse navbar-collapse" id="menu" style="position: center;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Almacén</a>
@@ -48,28 +49,60 @@
       </div>
     </div>
   </nav>
+  <!-- Carrusel -->
+
+  <div id="carrusel" class="carousel slide" data-bs-ride="carousel" style="width: fit-content;">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img src="./img/carrusel-01.jpg" class="d-block w-100" alt="img-01">
+      </div>
+      <div class="carousel-item" data-bs-interval="6000">
+        <img src="./img/carrusel-02.jpg" class="d-block w-100" alt="img-02">
+      </div>
+      <div class="carousel-item" data-bs-interval="9000">
+        <img src="./img/carrusel-03.jpg" class="d-block w-100" alt="img-03">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
   <!-- Insertar productos -->
-  
   <div style="margin-left: 1%; width: 40%;" class="card border-0">
     <table class="table table-borderless">
-          <tbody class="border border-0">
-            <tr>
-              <td><p>Identificador del producto</p></td>
-              <td style="width:55%;"><input type="text" name="id" id="id" style="width: 100%;"></td>
-            </tr>
-            <tr>
-              <td><p>Nombre del producto</p></td>
-              <td><input type="text" name="nombre" id="nombre" style="width: 100%;"></td>
-            </tr>
-            <tr>
-              <td><p>Precio del producto</p></td>
-              <td><input type="text" name="precio" id="precio" style="width: 100%;"></td>
-            </tr>
-            <tr>
-              <td><p>Pasillo del producto</p></td>
-              <td><p><input type="text" name="pasillo" id="pasillo" style="width: 100%;"></td>
-            </tr>
-          </tbody>
+      <tbody class="border border-0">
+        <tr>
+          <td>
+            <p>Identificador del producto</p>
+          </td>
+          <td style="width:55%;"><input type="text" name="id" id="id" style="width: 100%;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Nombre del producto</p>
+          </td>
+          <td><input type="text" name="nombre" id="nombre" style="width: 100%;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Precio del producto</p>
+          </td>
+          <td><input type="text" name="precio" id="precio" style="width: 100%;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Pasillo del producto</p>
+          </td>
+          <td>
+            <p><input type="text" name="pasillo" id="pasillo" style="width: 100%;">
+          </td>
+        </tr>
+      </tbody>
     </table>
 
     <button type="button" class="btn btn-outline-primary" OnClick="guardar()">Insertar</button><br>
