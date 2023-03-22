@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="estilos.css">
   <title>pruebasCss</title>
 </head>
+
 <script>
   function guardar() {
     var id = document.getElementById("id").value;
@@ -30,7 +31,8 @@
   <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="logo.png" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menu">
@@ -49,67 +51,77 @@
     </div>
   </nav>
   <!-- Insertar productos -->
-  
-  <div style="margin-left: 1%; width: 40%;" class="card border-0">
+  <div style="margin-left: 15%; width: 60%;" class="card border-0">
+    <h1 style="text-align: center;">Almacen de productos</h1>
     <table class="table table-borderless">
-          <tbody class="border border-0">
-            <tr>
-              <td><p>Identificador del producto</p></td>
-              <td style="width:55%;"><input type="text" name="id" id="id" style="width: 100%;"></td>
-            </tr>
-            <tr>
-              <td><p>Nombre del producto</p></td>
-              <td><input type="text" name="nombre" id="nombre" style="width: 100%;"></td>
-            </tr>
-            <tr>
-              <td><p>Precio del producto</p></td>
-              <td><input type="text" name="precio" id="precio" style="width: 100%;"></td>
-            </tr>
-            <tr>
-              <td><p>Pasillo del producto</p></td>
-              <td><p><input type="text" name="pasillo" id="pasillo" style="width: 100%;"></td>
-            </tr>
-          </tbody>
+      <tbody class="border border-0">
+        <tr>
+          <td>
+            <p>Identificador del producto</p>
+          </td>
+          <td style="width:75%;"><input type="text" name="id" id="id" style="width: 100%;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Nombre del producto</p>
+          </td>
+          <td><input type="text" name="nombre" id="nombre" style="width: 100%;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Precio del producto</p>
+          </td>
+          <td><input type="text" name="precio" id="precio" style="width: 100%;"></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Pasillo del producto</p>
+          </td>
+          <td>
+            <p><input type="text" name="pasillo" id="pasillo" style="width: 100%;">
+          </td>
+        </tr>
+      </tbody>
     </table>
 
     <button type="button" class="btn btn-outline-primary" OnClick="guardar()">Insertar</button><br>
   </div>
   <br>
   <!-- inicio tabla -->
-  <table class="table">
+  <div class="container-fluid" style="background-image: url(fondoTabla.jpg); height: 10%;">
+  <div style="margin-left: 15%; width: 60%;" class="card border-0">
     <h2 class="text-bg-light p-3 text-center">Tabla de productos</h2>
-    <thead class="table-dark">
-      <tr>
-        <th>ID</th>
-        <th>Nombre del producto</th>
-        <th>Precio del producto</th>
-        <th>Pasillo del producto</th>
-      </tr>
-    </thead>
-    <tbody id="tabla">
-      <tr>
-        <th>001</th>
-        <td>Platanos</td>
-        <td>1.25€/KG</td>
-        <td>P2</td>
-      </tr>
-      <tr>
-        <th>002</th>
-        <td>Manzanas</td>
-        <td>2.00€/KG</td>
-        <td>P2</td>
-      </tr>
-      <tr>
-        <th>003</th>
-        <td>Peras</td>
-        <td>0.75€/KG</td>
-        <td>P2</td>
-      </tr>
-    </tbody>
-  </table>
-  <!-- <footer class="d-flex align-items-center" style="background-color: aqua;">
-    <h1>esto es el footer</h1>
-  </footer> -->
+    <table class="table rounded">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre del producto</th>
+          <th>Precio del producto</th>
+          <th>Pasillo del producto</th>
+        </tr>
+      </thead>
+      <tbody id="tabla">
+        <tr>
+          <th>001</th>
+          <td>Platanos</td>
+          <td>1.25€/KG</td>
+          <td>P2</td>
+        </tr>
+        <tr>
+          <th>002</th>
+          <td>Manzanas</td>
+          <td>2.00€/KG</td>
+          <td>P2</td>
+        </tr>
+        <tr>
+          <th>003</th>
+          <td>Peras</td>
+          <td>0.75€/KG</td>
+          <td>P2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <div class="container-fluid" style="background-color: #161515;color: white;" >
     <footer class="row row-cols-5 py-3 my-5 border-top">
       <div class="col">
@@ -135,6 +147,7 @@
       </div>
     </footer>
   </div>
+</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
