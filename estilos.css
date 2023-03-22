@@ -2,10 +2,93 @@ header{
     background-color: black;
 }
 
-img{
-    width: 40px;
-    margin-left: 30%;
+a>img{
+    width: 40px; 
 }
-.ulNav{
-    margin-left: 42%;
-} 
+
+.carousel-inner{
+    max-width: 100%;
+    height: 95vh;
+}
+
+body{margin-top:20px;}
+@media (max-width: 991px) {
+  .nosotros-texto {
+    margin-top: 40px;
+  }
+}
+.nosotros-texto h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+@media (max-width: 767px) {
+  .nosotros-texto h3 {
+    font-size: 35px;
+  }
+}
+.nosotros-texto h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .nosotros-texto h4 {
+    font-size: 18px;
+  }
+}
+.nosotros-texto p {
+  font-size: 18px;
+}
+
+.nosotros-texto .btn-bar {
+  padding-top: 8px;
+}
+.nosotros-texto {
+  min-width: 150px;
+  text-align: justify;
+  margin-right: 10px;
+}
+
+.nosotros-img {
+  box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  background: #ffffff;
+  
+}
+img{
+    width: 500px;
+}
+@media (max-width: 991px) {
+  .about-img {
+    margin-top: 30px;
+  }
+}
+
+.counter-section {
+  padding: 40px 20px;
+}
+.counter-section .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.counter-section .count {
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+.counter-section p {
+  font-weight: 500;
+  margin: 0;
+  color: #fe4f6c;
+}
+.theme-color {
+    color: #fe4f6c;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+.gray-bg {
+    background-color: #ebf4fa;
+}
