@@ -11,6 +11,133 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 
+<script>
+    var precioF = 0;
+    function setPrecioF(precio) {
+        this.precioF = precio;
+    }
+    function getPrecioF() {
+        return precioF;
+    }
+    function Manzanas() {
+        var cantidad = document.getElementById("cantidadM").value;
+        var fila = "<tr><th>Manzana</td><td>2.00€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 2);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Peras() {
+        var cantidad = document.getElementById("cantidadPr").value;
+        var fila = "<tr><th>Peras</td><td>0.75€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 0.75);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Melones() {
+        var cantidad = document.getElementById("cantidadMe").value;
+        var fila = "<tr><th>Melon</td><td>1.15€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 1.15);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Alcachofas() {
+        var cantidad = document.getElementById("cantidadAl").value;
+        var fila = "<tr><th>Alcachofas</td><td>0.95€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 0.95);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Mandarinas() {
+        var cantidad = document.getElementById("cantidadMan").value;
+        var fila = "<tr><th>Mandarina</td><td>0.99€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 0.99);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Naranjas() {
+        var cantidad = document.getElementById("cantidadNar").value;
+        var fila = "<tr><th>Naranja</td><td>0.70€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 0.7);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Sandias() {
+        var cantidad = document.getElementById("cantidadSan").value;
+        var fila = "<tr><th>Sandia</td><td>3.00€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 3);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Fresas() {
+        var cantidad = document.getElementById("cantidadFr").value;
+        var fila = "<tr><th>Fresas</td><td>1.45€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 1.45);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+    function Platano() {
+        var cantidad = document.getElementById("cantidadPl").value;
+        var fila = "<tr><th>Platano</td><td>1.25€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 1.25);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
+</script>
+
 <body>
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
