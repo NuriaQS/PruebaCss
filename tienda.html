@@ -10,38 +10,27 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
 </head>
-<script>
-    function compraM() {
-        var nombre = "Manzana";
-        var precio = 2;
-        var cantidad = document.getElementById("cantidad").value;
-
-        var fila = "<tr><th>" + nombre + "</th><th>" + precio + "</th>+<th>" + cantidad + "</tr>";
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-    }
-</script>
 
 <body>
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menu" style="position: center;">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Catalogo</a>
-                    </li>
-                </ul>
-            </div>
+              <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="menu" style="position: center;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Catálogo</a>
+                          </li>
+                    </ul>
+              </div>
         </div>
     </nav>
     <!-- Tienda -->
+    <h2 class="text-bg-light p-3 text-center" id="tienda">Tienda</h2>
     <section class="section services-section" id="services">
         <div class="container">
             <div class="row">
@@ -52,17 +41,20 @@
                                 <i class="fa fa-desktop"><img src="./img/manzana.png" alt="manzana"
                                         style="height: 80%; width: 100%; margin-top: -40%;"></i>
                             </div>
-                            <div class="col" style="margin-left: 5%;">
+                            <div class="col" style="">
                                 <h3> Manzana</h3>
                             </div>
-                            <div class="col" style="margin-left: 5%;">
+                            <div class="col" style="margin-left: 10%;">
                                 <p>Precio: 2.00€/KG</p>
                                 <p>Pasillo: P2</p>
                             </div>
-                            <div>
-                                <button class="btn btn-primary btn-shadow btn-rounded w-md" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasWithBackdrop"
-                                    aria-controls="offcanvasWithBackdrop" onclick="compraM()">Insertar</button><br>
+                            <div class="col col-lg">
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                        style="width: 30%;">
+                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -72,18 +64,14 @@
                         <div class="row row-cols-3">
                             <div class="icon col">
                                 <i class="fa fa-desktop"><img src="./img/pera.png" alt="pera"
-                                        style="height: 100%; width: 120%; margin-top: -40%;margin-left: -15%;"></i>
+                                        style="height: 100%; width: 140%; margin-top: -40%;margin-left: -25%;"></i>
                             </div>
                             <div class="col" style="margin-left: 5%;">
-                                <h3> Pera</h3>
+                                <h3>Pera</h3>
                             </div>
                             <div class="col" style="margin-left: 5%;">
                                 <p>Precio: 0.75€/KG</p>
                                 <p>Pasillo: P2</p>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-primary btn-shadow btn-rounded w-md"
-                                    OnClick="">Insertar</button><br>
                             </div>
                         </div>
                     </div>
@@ -92,43 +80,164 @@
                     <div class="feature-box-1 ">
                         <div class="row row-cols-3">
                             <div class="icon col">
-                                <i class="fa fa-desktop"><img src="./img/platano.png" alt="pera"
-                                        style="height: 100%; width: 120%; margin-top: -40%;margin-left: -15%;"></i>
+                                <i class="fa fa-desktop"><img src="./img/platano.png" alt="platano"
+                                        style="height: 100%; width: 160%; margin-top: -40%;margin-left: -25%;"></i>
                             </div>
                             <div class="col" style="margin-left: 5%;">
-                                <h3>Platano</h3>
+                                <h3>Plátano</h3>
                             </div>
                             <div class="col" style="margin-left: 5%;">
                                 <p>Precio: 1.25€/KG</p>
                                 <p>Pasillo: P2</p>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-primary btn-shadow btn-rounded w-md"
-                                    OnClick="">Insertar</button><br>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                    onclick="Platanos()">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-box-1 ">
+                        <div class="row row-cols-3">
+                            <div class="icon col">
+                                <i class="fa fa-desktop"><img src="./img/melon.png" alt="melon"
+                                        style="height: 80%; width: 170%; margin-top: -40%;
+                                        margin-left: -35%;"></i>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <h3> Melón</h3>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <p>Precio: 1.15€/KG</p>
+                                <p>Pasillo: P3</p>
+                            </div>
+                            <div>
+                                <button onclick="Melones()" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-box-1 ">
+                        <div class="row row-cols-3">
+                            <div class="icon col">
+                                <i class="fa fa-desktop"><img src="./img/alcachofa.png" alt="alcachofa"
+                                        style="height: 100%; width: 160%; margin-top: -35%;margin-left: -15%;"></i>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <h3>Alcachofa</h3>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <p>Precio: 0.95€/KG</p>
+                                <p>Pasillo: P2</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                    onclick="Alcachofas()">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-box-1 ">
+                        <div class="row row-cols-3">
+                            <div class="icon col">
+                                <i class="fa fa-desktop"><img src="./img/mandarina.png" alt="mandarina"
+                                        style="height: 200%; width: 170%; margin-top: -130%;margin-left: -35%;"></i>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <h3>Mandarina</h3>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <p>Precio: 0.65€/KG</p>
+                                <p>Pasillo: P1</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                    onclick="Mandarinas()">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-box-1 ">
+                        <div class="row row-cols-3">
+                            <div class="icon col">
+                                <i class="fa fa-desktop"><img src="./img/naranja.png" alt="naranja"
+                                        style="height: 90%; width: 180%; margin-top: -40%; margin-left: -35%;"></i>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <h3> Naranja</h3>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <p>Precio: 0.70€/KG</p>
+                                <p>Pasillo: P2</p>
+                            </div>
+                            <div>
+                                <button onclick="Naranjas()" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-box-1 ">
+                        <div class="row row-cols-3">
+                            <div class="icon col">
+                                <i class="fa fa-desktop"><img src="./img/sandia.png" alt="sandia"
+                                        style="height: 100%; width: 260%; margin-top: -40%;margin-left: -65%;"></i>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <h3>Sandía</h3>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <p>Precio: 1.25€/KG</p>
+                                <p>Pasillo: P3</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                    onclick="Sandias()">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-box-1 ">
+                        <div class="row row-cols-3">
+                            <div class="icon col">
+                                <i class="fa fa-desktop"><img src="./img/fresa.png" alt="fresa"
+                                        style="height: 120%; width: 200%; margin-top: -40%;margin-left: -35%;"></i>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <h3>Fresa</h3>
+                            </div>
+                            <div class="col" style="margin-left: 5%;">
+                                <p>Precio: 1.45€/KG</p>
+                                <p>Pasillo: P1</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                    onclick="Fresas()">Añadir</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
-    <!-- cantidad compra -->
-    <table class="table table-borderless" style="width: 35%;">
-        <tbody class="border border-0">
-            <tr>
-                <td>
-                    <strong>cantidad de compra</strong>
-                </td>
-                <td style="width:75%;"><input type="text" name="id" id="id" style="width: 10%;"></td>
-            </tr>
-        </tbody>
-    </table>
-    <!-- cesta -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop"
-        aria-labelledby="offcanvasWithBackdropLabel">
+    <!-- Cesta copra -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Cesta de la compra</h5>
+            <h5 id="offcanvasRightLabel">Cesta de la compra</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -141,10 +250,85 @@
                     </tr>
                 </thead>
                 <tbody id="tabla">
+                    <tr></tr>
                 </tbody>
             </table>
+            <div>
+                <div id="resultado"></div>
+            </div>
         </div>
     </div>
+      <!-- footer -->
+  <div class="container-fluid" style="background-color: #161515;color: white;" id="contacto">
+    <footer class="row row-cols-5 py-3  border-top">
+      <div class="col-1">
+        <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo" style="height: 25%;width: 50%;margin-top: 50%;"></a>
+      </div>
+      <div class="col">
+        <h5>Menú</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
+          <li class="nav-item mb-2"><a href="#productos" class="nav-link p-0 text-muted">Productos</a></li>
+          <li class="nav-item mb-2"><a href="#almacen" class="nav-link p-0 text-muted">Almacen</a></li>
+          <li class="nav-item mb-2"><a href="tienda.html" class="nav-link p-0 text-muted">Tienda</a></li>
+          <li class="nav-item mb-2"><a href="#contacto" class="nav-link p-0 text-muted">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="col-sm-6">
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed/v1/place?q=Valencia&amp;key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4"
+              frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+              style="width: 250%; height: 360px;"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de contacto -->
+      <div class="col">
+        <form role="form" name="ajax-form" id="ajax-form" method="post" class="form-main">
+
+          <div class="form-group">
+            <label for="name2">Nombre</label>
+            <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Nombre'"
+              onfocus="if(this.value == 'Nombre') this.value=''" type="text" value="Nombre">
+            <div class="error" id="err-name" style="display: none;">Por favor, introduzca un nombre.</div>
+          </div> 
+
+          <div class="form-group">
+            <label for="email2">E-mail</label>
+            <input class="form-control" id="email2" name="email" type="text"
+              onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';"
+              value="E-mail">
+            <div class="error" id="err-emailvld" style="display: none;">El e-mail no tiene un formato válido.</div>
+          </div> 
+
+          <div class="form-group">
+            <label for="message2">Mensaje</label>
+            <textarea class="form-control" id="message2" name="message" rows="5"
+              onblur="if(this.value == '') this.value='Mensaje'"
+              onfocus="if(this.value == 'Mensaje') this.value=''">Mensaje</textarea>
+
+            <div class="error" id="err-message" style="display: none;">Por favor, escriba su mensaje.</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div id="ajaxsuccess" class="text-success">E-mail enviado correctamente.</div>
+              <div class="error" id="err-form" style="display: none;">Hay un problema de validación. Por favor,
+                revísalo.</div>
+              <div class="error" id="err-timedout">Conexión con el servidor terminada.</div>
+              <div class="error" id="err-state"></div>
+              <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </footer>
+  </div>
+    <!-- Botón flotante -->
+  <a href="#" class="boton"><img src="./img/up-arrow.png" alt="flecha"></a>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
