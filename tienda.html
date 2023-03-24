@@ -45,6 +45,19 @@
         resultado.innerHTML = resultadoMos;
         document.getElementById("resultado").replaceChildren(resultado);
     }
+    function Platano() {
+        var cantidad = document.getElementById("cantidadPl").value;
+        var fila = "<tr><th>Platano</td><td>1.25€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+        var precio = getPrecioF() + (cantidad * 1.25);
+        setPrecioF(precio);
+        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = resultadoMos;
+        document.getElementById("resultado").replaceChildren(resultado);
+    }
     function Melones() {
         var cantidad = document.getElementById("cantidadMe").value;
         var fila = "<tr><th>Melon</td><td>1.15€/KG</td><td>" + cantidad + '</td></tr>';
@@ -123,19 +136,6 @@
         resultado.innerHTML = resultadoMos;
         document.getElementById("resultado").replaceChildren(resultado);
     }
-    function Platano() {
-        var cantidad = document.getElementById("cantidadPl").value;
-        var fila = "<tr><th>Platano</td><td>1.25€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 1.25);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
 </script>
 
 <body>
@@ -201,9 +201,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadPr" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Peras()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -226,9 +226,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadPl" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Platano()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -252,9 +252,9 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadMe" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Melones()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -277,9 +277,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadAl" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Alcachofas()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -302,9 +302,9 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadMan" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Mandarinas()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -327,9 +327,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadNar" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Naranjas()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -352,9 +352,9 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadSan" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Sandias()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -377,9 +377,9 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" id="cantidadFre" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="Fresas()" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -486,6 +486,7 @@
     <!-- Botón flotante -->
   <a href="#" class="boton"><img src="./img/up-arrow.png" alt="flecha"></a>
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
