@@ -45,7 +45,7 @@
         document.getElementById("resultado").replaceChildren(resultado);
     }
     function Melones() {
-        cvar cantidad = document.getElementById("cantidadMe").value;
+        var cantidad = document.getElementById("cantidadMe").value;
         var fila = "<tr><th>Melon</td><td>1.15€/KG</td><td>" + cantidad + '</td></tr>';
         var linea = document.createElement("tr");
         linea.innerHTML = fila;
@@ -136,7 +136,6 @@
         document.getElementById("resultado").replaceChildren(resultado);
     }
 </script>
-
 <body>
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
