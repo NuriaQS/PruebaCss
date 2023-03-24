@@ -10,23 +10,53 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
 </head>
+<script>
+    function Manzanas() {
+        var cantidad = document.getElementById("cantidad").value;
+        console.log(cantidad * 2);
+        var fila = "<tr><th>Manzana</td><td>2.00€/KG</td><td>" + cantidad + '</td></tr>';
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+    }
+    function Peras() {
+        console.log("pera")
+        var cantidad = document.getElementById("cantidad").value;
+        console.log(cantidad * 0.75);
+        var fila = "<tr><th>Pera</td><td>0.75€/KG</td><td>" + cantidad + "</td></tr>";
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+    }
+    function Platano() {
+        console.log("platano")
+        var cantidad = document.getElementById("cantidad").value;
+        console.log(cantidad * 1.25);
+        var fila = "<tr><th>Platano</td><td>1.25€/KG</td><td>" + cantidad + "</td></tr>";
+        var linea = document.createElement("tr");
+        linea.innerHTML = fila;
+        document.getElementById("tabla").appendChild(linea);
+    }
+
+   
+</script>
 
 <body>
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="menu" style="position: center;">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Catalogo</a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu" style="position: center;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Catalogo</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- Tienda -->
@@ -47,6 +77,11 @@
                                 <p>Precio: 2.00€/KG</p>
                                 <p>Pasillo: P2</p>
                             </div>
+                            <div>
+                                <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">Añadir</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -58,11 +93,16 @@
                                         style="height: 100%; width: 120%; margin-top: -40%;margin-left: -15%;"></i>
                             </div>
                             <div class="col" style="margin-left: 5%;">
-                                <h3> Pera</h3>
+                                <h3>Pera</h3>
                             </div>
                             <div class="col" style="margin-left: 5%;">
                                 <p>Precio: 0.75€/KG</p>
                                 <p>Pasillo: P2</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                    onclick="Peras()">Añadir</button>
                             </div>
                         </div>
                     </div>
@@ -81,6 +121,11 @@
                                 <p>Precio: 1.25€/KG</p>
                                 <p>Pasillo: P2</p>
                             </div>
+                            <div>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                                    onclick="Platano()">Añadir</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,6 +133,28 @@
         </div>
         </div>
     </section>
+    <input type="text" name="cantidad" id="cantidad">
+    <!-- Cesta copra -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Cesta de la compra</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <table class="table rounded">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre del producto</th>
+                        <th>Precio del producto</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla">
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -95,4 +162,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
+
 </html>
