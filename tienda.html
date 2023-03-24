@@ -136,24 +136,30 @@
         resultado.innerHTML = resultadoMos;
         document.getElementById("resultado").replaceChildren(resultado);
     }
+    function MostrarPrecioF() {
+        var mostrar = "<p>EL precio total es de: " + getPrecioF() + "€<p>";
+        var resultado = document.createElement("p");
+        resultado.innerHTML = mostrar;
+        document.getElementById("emergenteFinal").replaceChildren(resultado);
+    }
 </script>
 
 <body>
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
         <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="menu" style="position: center;">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="index.html">Catálogo</a>
-                          </li>
-                    </ul>
-              </div>
+            <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu" style="position: center;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Catálogo</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- Tienda -->
@@ -240,8 +246,7 @@
                     <div class="feature-box-1 ">
                         <div class="row row-cols-3">
                             <div class="icon col">
-                                <i class="fa fa-desktop"><img src="./img/melon.png" alt="melon"
-                                        style="height: 80%; width: 170%; margin-top: -40%;
+                                <i class="fa fa-desktop"><img src="./img/melon.png" alt="melon" style="height: 80%; width: 170%; margin-top: -40%;
                                         margin-left: -35%;"></i>
                             </div>
                             <div class="col" style="margin-left: 5%;">
@@ -390,7 +395,7 @@
             </div>
         </div>
     </section>
-    <!-- Cesta copra -->
+    <!-- Cesta compra -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 id="offcanvasRightLabel">Cesta de la compra</h5>
@@ -412,79 +417,109 @@
             <div>
                 <div id="resultado"></div>
             </div>
+            <button class="container container-fluid btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop" onclick="MostrarPrecioF()">Finalizar compra</button>
         </div>
     </div>
-      <!-- footer -->
-  <div class="container-fluid" style="background-color: #161515;color: white;" id="contacto">
-    <footer class="row row-cols-5 py-3  border-top">
-      <div class="col-1">
-        <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo" style="height: 25%;width: 50%;margin-top: 50%;"></a>
-      </div>
-      <div class="col">
-        <h5>Menú</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
-          <li class="nav-item mb-2"><a href="#productos" class="nav-link p-0 text-muted">Productos</a></li>
-          <li class="nav-item mb-2"><a href="#almacen" class="nav-link p-0 text-muted">Almacen</a></li>
-          <li class="nav-item mb-2"><a href="tienda.html" class="nav-link p-0 text-muted">Tienda</a></li>
-          <li class="nav-item mb-2"><a href="#contacto" class="nav-link p-0 text-muted">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <div class="col-sm-6">
-          <div class="contact-map">
-            <iframe
-              src="https://www.google.com/maps/embed/v1/place?q=Valencia&amp;key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4"
-              frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-              style="width: 250%; height: 360px;"></iframe>
-          </div>
-        </div>
-      </div>
-
-      <!-- Formulario de contacto -->
-      <div class="col">
-        <form role="form" name="ajax-form" id="ajax-form" method="post" class="form-main">
-
-          <div class="form-group">
-            <label for="name2">Nombre</label>
-            <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Nombre'"
-              onfocus="if(this.value == 'Nombre') this.value=''" type="text" value="Nombre">
-            <div class="error" id="err-name" style="display: none;">Por favor, introduzca un nombre.</div>
-          </div> 
-
-          <div class="form-group">
-            <label for="email2">E-mail</label>
-            <input class="form-control" id="email2" name="email" type="text"
-              onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';"
-              value="E-mail">
-            <div class="error" id="err-emailvld" style="display: none;">El e-mail no tiene un formato válido.</div>
-          </div> 
-
-          <div class="form-group">
-            <label for="message2">Mensaje</label>
-            <textarea class="form-control" id="message2" name="message" rows="5"
-              onblur="if(this.value == '') this.value='Mensaje'"
-              onfocus="if(this.value == 'Mensaje') this.value=''">Mensaje</textarea>
-
-            <div class="error" id="err-message" style="display: none;">Por favor, escriba su mensaje.</div>
-          </div>
-
-          <div class="row">
-            <div class="col-xs-12">
-              <div id="ajaxsuccess" class="text-success">E-mail enviado correctamente.</div>
-              <div class="error" id="err-form" style="display: none;">Hay un problema de validación. Por favor,
-                revísalo.</div>
-              <div class="error" id="err-timedout">Conexión con el servidor terminada.</div>
-              <div class="error" id="err-state"></div>
-              <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Enviar</button>
+    <!-- finalizar compra -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="emergenteFinal">
+                    <p>El precio total de su compra es de</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="location.reload()">Finalizar compra</button>
+                </div>
             </div>
-          </div>
-        </form>
-      </div>
-    </footer>
-  </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="container-fluid" style="background-color: #161515;color: white;" id="contacto">
+        <footer class="row row-cols-5 py-3  border-top">
+            <div class="col-1">
+                <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"
+                        style="height: 25%;width: 50%;margin-top: 50%;"></a>
+            </div>
+            <div class="col">
+                <h5>Menú</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#nosotros" class="nav-link p-0 text-muted">Nosotros</a></li>
+                    <li class="nav-item mb-2"><a href="#productos" class="nav-link p-0 text-muted">Productos</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#almacen" class="nav-link p-0 text-muted">Almacen</a></li>
+                    <li class="nav-item mb-2"><a href="tienda.html" class="nav-link p-0 text-muted">Tienda</a></li>
+                    <li class="nav-item mb-2"><a href="#contacto" class="nav-link p-0 text-muted">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="col-sm-6">
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed/v1/place?q=Valencia&amp;key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                            style="width: 250%; height: 360px;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de contacto -->
+            <div class="col">
+                <form role="form" name="ajax-form" id="ajax-form" method="post" class="form-main">
+
+                    <div class="form-group">
+                        <label for="name2">Nombre</label>
+                        <input class="form-control" id="name2" name="name"
+                            onblur="if(this.value == '') this.value='Nombre'"
+                            onfocus="if(this.value == 'Nombre') this.value=''" type="text" value="Nombre">
+                        <div class="error" id="err-name" style="display: none;">Por favor, introduzca un nombre.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email2">E-mail</label>
+                        <input class="form-control" id="email2" name="email" type="text"
+                            onfocus="if(this.value == 'E-mail') this.value='';"
+                            onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+                        <div class="error" id="err-emailvld" style="display: none;">El e-mail no tiene un formato
+                            válido.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message2">Mensaje</label>
+                        <textarea class="form-control" id="message2" name="message" rows="5"
+                            onblur="if(this.value == '') this.value='Mensaje'"
+                            onfocus="if(this.value == 'Mensaje') this.value=''">Mensaje</textarea>
+
+                        <div class="error" id="err-message" style="display: none;">Por favor, escriba su mensaje.
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="ajaxsuccess" class="text-success">E-mail enviado correctamente.</div>
+                            <div class="error" id="err-form" style="display: none;">Hay un problema de validación.
+                                Por
+                                favor,
+                                revísalo.</div>
+                            <div class="error" id="err-timedout">Conexión con el servidor terminada.</div>
+                            <div class="error" id="err-state"></div>
+                            <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md"
+                                id="send">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </footer>
+    </div>
     <!-- Botón flotante -->
-  <a href="#" class="boton"><img src="./img/up-arrow.png" alt="flecha"></a>
+    <a href="#" class="boton"><img src="./img/up-arrow.png" alt="flecha"></a>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
