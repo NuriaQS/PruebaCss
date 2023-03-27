@@ -8,7 +8,7 @@ a>img {
   width: 40px;
 }
 
-.carousel-inner {
+.carousel-inner{
   max-width: 100%;
   height: 95vh;
 }
@@ -206,7 +206,6 @@ img {
   box-shadow: 1px 5px 9px rgb(112, 24, 39);
 }
 
-/*======= Responsive ======*/
 @media (min-width: 768px) {
   .nav-custom-left {
     margin-left: 5%;
@@ -386,3 +385,42 @@ img {
   padding: 18px 30px;
   z-index: 99;
 }
+
+/* Productos añadidos */
+.col-item {
+	border: 1px solid #d6d6d6;
+	background: #ffffff;
+  border-radius: 12px;
+}
+
+.col-item .info {
+	padding: 10px;
+	margin-top: 1px;
+}
+
+.col-item .info p {
+	color: #777777;
+	font-size: 14px;
+}
+
+.col-item .icon{
+    width: 80px;
+    height: 80px;
+    line-height: 10px;
+    background: #b0d4ce;
+    color:#b0d4ce;
+    text-align: center;
+    border-radius: 80%;
+    margin-top: 10px;
+    font-size: 27px;
+    margin-left: 15px;
+}
+.info h3 {
+  color: #20247b;
+  font-weight: 600;
+}
+#boton{
+  margin-left: 40%;
+  margin-bottom: 5%;
+}
+

@@ -46,7 +46,7 @@
             <a class="nav-link" href="#productos">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#almacen">Almacen</a>
+            <a class="nav-link" href="#almacen">Almacén</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="tienda.html">Tienda</a>
@@ -87,7 +87,7 @@
         <div class="col-lg-6">
           <div class="nosotros-texto">
             <h3 class="dark-color">Sobre nosotros</h3>
-            <h4 class="theme-color">Almacén tienda</h4>
+            <h4 class="theme-color">De la huerta a casa</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptates delectus inventore ab dolores
               tempora sapiente animi. Culpa porro inventore enim rem qui reiciendis omnis aliquam, necessitatibus
               doloremque excepturi labore?</p>
@@ -172,7 +172,7 @@
           </tr>
           <tr>
             <th>004</th>
-            <td>Melon</td>
+            <td>Melón</td>
             <td>1.15€/KG</td>
             <td>P3</td>
           </tr>
@@ -208,6 +208,83 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <!-- Productos añadidos -->
+  <h2 class="text-bg-light p-3 text-center">Nuevos productos añadidos</h2>
+  <div class="container">
+    <div id="code-carousel" class="carousel slide hidden-xs" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="col-item">
+              <div class="icon col">
+                <i class="fa fa-desktop"><img src="./img/pera.png" alt="pera"
+                    style="height: 80%; width: 100%; margin-top: -25%;"></i>
+              </div>
+              <div class="info">
+                <h3 style="margin-left: 110px; margin-top: -65px;">Pera</h3>
+                <p class="desc" style="text-align: justify; margin-top: 10%;">Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Aperiam voluptates, impedit minus dignissimos temporibus soluta? Modi fuga impedit
+                  maiores, rem accusantium tempora sapiente officia vel consectetur culpa voluptatum deserunt voluptate.
+                </p>
+                <p><b>Precio:</b> 0,75€/Kg</p>
+                <div class="separator clear-left">
+                  <button class="btn btn-primary btn-shadow btn-rounded w-md" id="boton">
+                    <a class="btn-link" href="tienda.html" style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
+                  </button>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-item">
+              <div class="icon col">
+                <i class="fa fa-desktop"><img src="./img/alcachofa.png" alt="pera"
+                    style="height: 100%; width: 100%; margin-top: -25%;"></i>
+              </div>
+              <div class="info">
+                <h3 style="margin-left: 110px; margin-top: -65px;">Alcachofa</h3>
+                <p class="desc" style="text-align: justify; margin-top: 10%;">Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Aperiam voluptates, impedit minus dignissimos temporibus soluta? Modi fuga impedit
+                  maiores, rem accusantium tempora sapiente officia vel consectetur culpa voluptatum deserunt voluptate.
+                </p>
+                <p><b>Precio:</b> 0,75€/Kg</p>
+                <div class="separator clear-left">
+                  <button class="btn btn-primary btn-shadow btn-rounded w-md" id="boton">
+                    <a class="btn-link" href="tienda.html" style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
+                  </button>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-item">
+              <div class="icon col">
+                <i class="fa fa-desktop"><img src="./img/melon.png" alt="pera"
+                    style="height: 80%; width: 120%; margin-top: -25%; margin-left: -5%;"></i>
+              </div>
+              <div class="info">
+                <h3 style="margin-left: 110px; margin-top: -65px;">Melón</h3>
+                <p class="desc" style="text-align: justify; margin-top: 10%;">Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Aperiam voluptates, impedit minus dignissimos temporibus soluta? Modi fuga impedit
+                  maiores, rem accusantium tempora sapiente officia vel consectetur culpa voluptatum deserunt voluptate.
+                </p>
+                <p><b>Precio:</b> 0,75€/Kg</p>
+                <div class="separator clear-left">
+                  <button class="btn btn-primary btn-shadow btn-rounded w-md" id="boton">
+                    <a class="btn-link" href="tienda.html" style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
+                  </button>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
   <!-- Contacto -->
@@ -248,7 +325,8 @@
   <div class="container-fluid" style="background-color: #161515;color: white;" id="contacto">
     <footer class="row row-cols-5 py-3  border-top">
       <div class="col-1">
-        <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo" style="height: 25%;width: 50%;margin-top: 50%;"></a>
+        <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"
+            style="height: 25%;width: 50%;margin-top: 50%;"></a>
       </div>
       <div class="col">
         <h5>Menú</h5>
@@ -280,7 +358,7 @@
             <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Nombre'"
               onfocus="if(this.value == 'Nombre') this.value=''" type="text" value="Nombre">
             <div class="error" id="err-name" style="display: none;">Por favor, introduzca un nombre.</div>
-          </div> 
+          </div>
 
           <div class="form-group">
             <label for="email2">E-mail</label>
@@ -288,7 +366,7 @@
               onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';"
               value="E-mail">
             <div class="error" id="err-emailvld" style="display: none;">El e-mail no tiene un formato válido.</div>
-          </div> 
+          </div>
 
           <div class="form-group">
             <label for="message2">Mensaje</label>
