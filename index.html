@@ -14,11 +14,7 @@
 </head>
 <script src="datos.js"></script>
 <script>
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> cb8623aeb1f78aef34f5979cfd79d29e9a851f0e
   function guardar() {
     var id = document.getElementById("id").value;
     var nombre = document.getElementById("nombre").value;
@@ -38,7 +34,6 @@
   }
 
   function listar() {
-<<<<<<< HEAD
     console.log(localStorage.length);
     for (let index = 0; index < localStorage.length; index++) {
       var element = DataStorage.get("00" + (index + 1));
@@ -49,14 +44,6 @@
     }
   }
 
-=======
-    var cantidad = localStorage.length;
-    for (let index = 0; index < cantidad.length; index++) {
-      var element = DataStorage.get("00"+index);
-      var fila = "<tr><th>"element.id+"<th><td>"+element.name+"</td><td>"+element.price+"€/KG</td><td>"+element.aisle+"</td></tr>"
-    }
-  }
->>>>>>> cb8623aeb1f78aef34f5979cfd79d29e9a851f0e
 </script>
 
 <body onload="listar()">
@@ -369,15 +356,29 @@
       </div>
     </footer>
   </div>
+  <!-- Cookie Banner -->
+  <div class="card cookie-alert">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center; margin-top: 10px;">&#x1F36A; Cookies</h5>
+      <p class="card-text" style="text-align: justify; margin-top: 5%;">We use cookies to ensure you get the best experience on our website.</p>
+      <div class="btn-toolbar justify-content-end">
+        <a href="#" class="btn btn-primary accept-cookies">Accept</a>
+      </div>
+    </div>
+  </div>
   <!-- Botón flotante -->
   <a href="#" class="boton"><img src="./img/up-arrow.png" alt="flecha"></a>
-
   <script src="script.js"></script>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
   integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+
+
 
 </html>
