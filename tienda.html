@@ -30,31 +30,42 @@
         var cantidad = document.getElementsByClassName("cantidad").item(idC).value;
         var producto = DataStorage.get(idP);
         var nombre = "fila"+idFila;
-        var insertar = '<tr><td>' + producto.name + '</td><td>' + producto.price + '</td><td>' + cantidad + '</td><td><button onclick="eliminarFila('+"'"+nombre+"'"+')">Eliminar</button></td></tr>';
+        var insertar = '<tr><td>' + producto.name + '</td><td>' + producto.price + '</td><td>' + cantidad + '</td><td><button onclick="eliminarFila('+"'"+nombre+"',"+cantidad+','+producto.price+')">Eliminar</button></td></tr>';
         var componente = document.createElement("tr");
         componente.setAttribute("id", nombre);
         componente.innerHTML = insertar;
-        document.getElementById('tablaprueba').appendChild(componente); 
+        document.getElementById('tablaprueba').appendChild(componente);
+        var precio = getPrecioF() + (producto.price * cantidad);
+        setPrecioF(precio);
+        mostrarPrecioInter();
         idFila++;
     }
 
     function box(precio, nombre) {
-        var fila = "<tr><th>" + nombre + '</td><td>' + precio + '€</td><td">1</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (1 * precio);
+        var nombre = "fila"+idFila;
+        var insertar = '<tr><td>' + nombre + '</td><td>' + precio + '</td><td>1</td><td><button onclick="eliminarFila('+"'"+nombre+"',1,"+precio+')">Eliminar</button></td></tr>';
+        var componente = document.createElement("tr");
+        componente.setAttribute("id", nombre);
+        componente.innerHTML = insertar;
+        document.getElementById('tablaprueba').appendChild(componente);
+        var precio = getPrecioF() + (precio * 1);
         setPrecioF(precio);
+        mostrarPrecioInter();
+        idFila++;
+    }
+    
+    function mostrarPrecioInter(){
         var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
         var resultado = document.createElement("p");
         resultado.innerHTML = resultadoMos;
         document.getElementById("resultado").replaceChildren(resultado);
-        filaTb++;
     }
 
-    function eliminarFila(nombre) {
+    function eliminarFila(nombre,cantidad,precio) {
         var element = document.getElementById(nombre);
         element.remove();
+        setPrecioF((getPrecioF()-(cantidad*precio)));
+        mostrarPrecioInter();
     }
 
     var inicio = 1;
@@ -79,7 +90,7 @@
     }
 </script>
 
-<body>
+<body onload="mostrarPrecioInter()">
 
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand bg-dark">
@@ -404,7 +415,7 @@
                         <p class="card-text" style="text-align: justify;">Contenido: 6 Kg de pera de variedad Conferencia.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                             aria-controls="offcanvasRight" class="btn btn-primary"
-                            onclick="box(7.55,'Caja de peras')">Añadir</a>
+                            onclick="box(9.50,'Caja de peras')">Añadir</a>
 
                     </div>
                 </div>
@@ -419,7 +430,9 @@
                         <h2 class="card-title">Caja de fruta variada</h2>
                         <h4 class="card-price">28,00€</h4>
                         <p class="card-text">Esta caja contiene:<br>-1Kg Plátanos<br>-1Kg Manzanas <br>-1Kg Peras <br>-1.5Kg Mandarinas <br>-1.5Kg Naranjas</p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            onclick="box(28,'Caja de fruta variada')">Añadir</a>
                     </div>
                 </div>
             </div>
@@ -433,7 +446,9 @@
                         <h2 class="card-title">Caja de verduras</h2>
                         <h4 class="card-price">26,00€</h4>
                         <p class="card-text">Esta caja contiene: <br>-2Kg Patatas <br>-1Kg Cebollas <br>-2Kg Tomates <br>-1Kg Zanahorias <br> </p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            onclick="box(26,'Caja de verduras')">Añadir</a>
                     </div>
                 </div>
             </div>
@@ -447,7 +462,9 @@
                         <h2 class="card-title">Caja de fruta y verdura</h2>
                         <h4 class="card-price">45,75€</h4>
                         <p class="card-text">Esta caja contiene: <br>-1Kg Naranjas -1Kg Fresón <br>-1Kg Manzana -1Kg Peras <br>-1 Lechuga -1 Coliflor <br>-1Kg Tomates -1kg Zanahorias <br>-1Kg Berenjena -1Kg Calabacín</p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            onclick="box(45.75,'Caja de fruta y verdura')">Añadir</a>
                     </div>
                 </div>
             </div>
@@ -464,7 +481,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th>Nombre del producto</th>
-                        <th>Precio</th>
+                        <th>Precio(Unidad/Kg)</th>
                         <th>Cantidad</th>
                     </tr>
                 </thead>
