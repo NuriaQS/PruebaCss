@@ -29,12 +29,12 @@
     function product(idP, idC) {
         var cantidad = document.getElementsByClassName("cantidad").item(idC).value;
         var producto = DataStorage.get(idP);
-        var nombre = "fila"+idFila;
-        var insertar = '<tr><td>' + producto.name + '</td><td>' + producto.price + '</td><td>' + cantidad + '</td><td><button onclick="eliminarFila('+"'"+nombre+"'"+')">Eliminar</button></td></tr>';
+        var nombre = "fila" + idFila;
+        var insertar = '<tr><td>' + producto.name + '</td><td>' + producto.price + '</td><td>' + cantidad + '</td><td><button onclick="eliminarFila(' + "'" + nombre + "'" + ')">Eliminar</button></td></tr>';
         var componente = document.createElement("tr");
         componente.setAttribute("id", nombre);
         componente.innerHTML = insertar;
-        document.getElementById('tablaprueba').appendChild(componente); 
+        document.getElementById('tablaprueba').appendChild(componente);
         idFila++;
     }
 
@@ -98,8 +98,7 @@
                 <ul>
                     <li class="nav-item">
                         <a class="navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight"><img
-                                src="img/carrito-de-compras.png" alt="logo"></a>
+                            aria-controls="offcanvasRight"><img src="img/carrito-de-compras.png" alt="logo"></a>
                     </li>
                 </ul>
             </div>
@@ -125,10 +124,12 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(0)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(0)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(0)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(0)">+</button>
+                                </div>
                                 <button onclick="product('002',0)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -151,10 +152,12 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(1)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(1)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(1)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(1)">+</button>
+                                </div>
                                 <button onclick="product('003',1)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -178,10 +181,12 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(2)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(2)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(2)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(2)">+</button>
+                                </div>
                                 <button onclick="product('001',2)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -205,10 +210,12 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(3)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(3)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(3)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(3)">+</button>
+                                </div>
                                 <button onclick="product('004',3)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -232,10 +239,12 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(4)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(4)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(4)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(4)">+</button>
+                                </div>
                                 <button onclick="product('005',4)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -259,10 +268,12 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(5)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(5)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(5)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(5)">+</button>
+                                </div>
                                 <button onclick="product('006',5)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -286,10 +297,12 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(6)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(6)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(6)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(6)">+</button>
+                                </div>
                                 <button onclick="product('007',6)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -313,10 +326,12 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(7)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%; border-radius: 15%;">
-                                <button onclick="aumentar(7)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(7)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(7)">+</button>
+                                </div>
                                 <button onclick="product('008',7)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                     aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
@@ -340,13 +355,16 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <button onclick="disminuir(8)">-</button>
-                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
-                                    style="width: 30%;  border-radius: 15%;">
-                                <button onclick="aumentar(8)">+</button>
+                                <div class="btn-group" style="width: 25%; margin-top: -2%;">
+                                    <button class="btn btn-secondary p-0 " onclick="disminuir(8)">-</button>
+                                    <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                        style="width: 40%; text-align: center;">
+                                    <button class="btn btn-secondary p-0" onclick="aumentar(8)">+</button>
+                                </div>
                                 <button onclick="product('009',8)" class="btn btn-primary" type="button"
                                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir
+                                </button>
                                 </p>
                             </div>
                         </div>
@@ -364,15 +382,14 @@
                     <img class="card-img-top" alt="caja-fresas"
                         style="height: 180px; width: 80%; display: block; margin-left: 10%;" src="./img/caja-fresas.png"
                         data-holder-rendered="true">
-                    <div class="card-body"> 
-
+                    <div class="card-body">
                         <h2 class="card-title">Caja de fresas</h2>
                         <h4 class="card-price">14,00€</h4>
                         <p class="card-text" style="text-align: justify;">Contenido: 0,9 Kg de fresas.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn btn-primary"
-                            onclick="box(14,'Caja de fresas')">Añadir</a>
-
+                            aria-controls="offcanvasRight" class="btn btn-primary btn-shadow"
+                            onclick="box(14,'Caja de fresas')">Añadir
+                        </a>
                     </div>
                 </div>
             </div>
@@ -386,24 +403,23 @@
                         <h4 class="card-price">12,25€</h4>
                         <p class="card-text" style="text-align: justify;">Contenido: 8 Kg de naranjas para zumo.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            aria-controls="offcanvasRight" class="btn btn-primary btn-shadow"
                             onclick="box(12.25,'Caja de naranjas')">Añadir</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card baseBlock">
-
                     <img class="card-img-top" alt="caja-peras"
-                        style="height: 180px; width: 80%; display: block; margin-left: 10%;"
-                        src="./img/caja-peras.png"
+                        style="height: 180px; width: 80%; display: block; margin-left: 10%;" src="./img/caja-peras.png"
                         data-holder-rendered="true">
                     <div class="card-body">
                         <h2 class="card-title">Caja de pera conferencia</h2>
                         <h4 class="card-price">9,50€</h4>
-                        <p class="card-text" style="text-align: justify;">Contenido: 6 Kg de pera de variedad Conferencia.</p>
+                        <p class="card-text" style="text-align: justify;">Contenido: 6 Kg de pera de variedad
+                            Conferencia.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            aria-controls="offcanvasRight" class="btn btn-primary btn-shadow"
                             onclick="box(7.55,'Caja de peras')">Añadir</a>
 
                     </div>
@@ -413,27 +429,28 @@
                 <div class="card baseBlock">
                     <img class="card-img-top" alt="caja-fruta"
                         style="height: 200px; width: 80%; display: block; margin-left: 10%;"
-                        src="./img/fruta-variada.png"
-                        data-holder-rendered="true">
+                        src="./img/fruta-variada.png" data-holder-rendered="true">
                     <div class="card-body">
                         <h2 class="card-title">Caja de fruta variada</h2>
                         <h4 class="card-price">28,00€</h4>
-                        <p class="card-text">Esta caja contiene:<br>-1Kg Plátanos<br>-1Kg Manzanas <br>-1Kg Peras <br>-1.5Kg Mandarinas <br>-1.5Kg Naranjas</p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <p class="card-text">Esta caja contiene:<br>-1Kg Plátanos<br>-1Kg Manzanas <br>-1Kg Peras
+                            <br>-1.5Kg Mandarinas <br>-1.5Kg Naranjas
+                        </p>
+                        <a href="#" class="btn btn-primary btn-shadow">Añadir</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card baseBlock">
-                    <img class="card-img-top" alt="caja-verdura"
-                        style="height: 220px; width: 100%; display: block;"
-                        src="./img/caja-verduras.png"
-                        data-holder-rendered="true">
+                    <img class="card-img-top" alt="caja-verdura" style="height: 220px; width: 100%; display: block;"
+                        src="./img/caja-verduras.png" data-holder-rendered="true">
                     <div class="card-body">
                         <h2 class="card-title">Caja de verduras</h2>
                         <h4 class="card-price">26,00€</h4>
-                        <p class="card-text">Esta caja contiene: <br>-2Kg Patatas <br>-1Kg Cebollas <br>-2Kg Tomates <br>-1Kg Zanahorias <br> </p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <p class="card-text">Esta caja contiene: <br>-2Kg Patatas <br>-1Kg Cebollas <br>-2Kg Tomates
+                            <br>-1Kg Zanahorias <br>
+                        </p>
+                        <a href="#" class="btn btn-primary btn-shadow">Añadir</a>
                     </div>
                 </div>
             </div>
@@ -441,13 +458,14 @@
                 <div class="card baseBlock">
                     <img class="card-img-top" alt="verdura-fruta"
                         style="height: 200px; width: 60%; display: block; margin-left: 20%;"
-                        src="./img/verdura-fruta.png"
-                        data-holder-rendered="true">
+                        src="./img/verdura-fruta.png" data-holder-rendered="true">
                     <div class="card-body">
                         <h2 class="card-title">Caja de fruta y verdura</h2>
                         <h4 class="card-price">45,75€</h4>
-                        <p class="card-text">Esta caja contiene: <br>-1Kg Naranjas -1Kg Fresón <br>-1Kg Manzana -1Kg Peras <br>-1 Lechuga -1 Coliflor <br>-1Kg Tomates -1kg Zanahorias <br>-1Kg Berenjena -1Kg Calabacín</p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <p class="card-text">Esta caja contiene: <br>-1Kg Naranjas -1Kg Fresón <br>-1Kg Manzana -1Kg
+                            Peras <br>-1 Lechuga -1 Coliflor <br>-1Kg Tomates -1kg Zanahorias <br>-1Kg Berenjena -1Kg
+                            Calabacín</p>
+                        <a href="#" class="btn btn-primary btn-shadow">Añadir</a>
                     </div>
                 </div>
             </div>
@@ -476,7 +494,7 @@
             <div>
                 <div id="resultado"></div>
             </div>
-            <button class="container container-fluid btn btn-primary" data-bs-toggle="modal"
+            <button class="container container-fluid btn btn-primary btn-shadow" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop" onclick="MostrarPrecioF()">Finalizar compra</button>
         </div>
     </div>
@@ -506,7 +524,7 @@
         <footer class="row row-cols-5 py-3  border-top">
             <div class="col-1">
                 <a class="navbar-brand" href="index.html"><img src="img/logoTiendaFondo.png" alt="logo"
-                    style="height: 25%;width: 60%;margin-top: 50%;"></a>
+                        style="height: 25%;width: 60%;margin-top: 50%;"></a>
             </div>
             <div class="col">
                 <h5>Menú</h5>
