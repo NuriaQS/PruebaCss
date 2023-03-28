@@ -10,7 +10,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
 </head>
-
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 <script src="datos.js"></script>
 <script>
     var precioF = 0;
@@ -22,20 +22,50 @@
         return precioF;
     }
 
+    var idFila = 0;
     function product(idP, idC) {
         var cantidad = document.getElementsByClassName("cantidad").item(idC).value;
         var producto = DataStorage.get(idP);
-        var fila = "<tr><th>" + producto.name + '</td><td style="flex-wrap: nowrap"><div id="precio">' + producto.price + '</div>€/KG</td><td id="cantidad" >' + cantidad + '</td></tr>';
+        var nombre = "fila"+idFila;
+        var insertar = '<tr><td>' + producto.name + '</td><td>' + producto.price + '</td><td>' + cantidad + '</td><td><button onclick="eliminarFila('+"'"+nombre+"'"+')">Eliminar</button></td></tr>';
+        var componente = document.createElement("tr");
+        componente.setAttribute("id", nombre);
+        componente.innerHTML = insertar;
+        document.getElementById('tablaprueba').appendChild(componente); 
+        idFila++;
+    }
+
+    function box(precio, nombre) {
+        var fila = "<tr><th>" + nombre + '</td><td>' + precio + '€</td><td">1</td></tr>';
         var linea = document.createElement("tr");
         linea.innerHTML = fila;
         document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * producto.price);
+        var precio = getPrecioF() + (1 * precio);
         setPrecioF(precio);
         var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
         var resultado = document.createElement("p");
         resultado.innerHTML = resultadoMos;
         document.getElementById("resultado").replaceChildren(resultado);
         filaTb++;
+    }
+
+    function eliminarFila(nombre) {
+        var element = document.getElementById(nombre);
+        element.remove();
+    }
+
+    var inicio = 1;
+    function setInicio(inicio2) {
+        this.inicio = inicio2
+    }
+
+    function aumentar(idC) {
+        var cantidad = document.getElementsByClassName('cantidad').item(idC).value = ++inicio;
+    }
+    function disminuir(idC) {
+        if (document.getElementsByClassName('cantidad').item(idC).value >= 2) {
+            var cantidad = document.getElementsByClassName('cantidad').item(idC).value = --inicio;
+        }
     }
 
     function MostrarPrecioF() {
@@ -47,6 +77,7 @@
 </script>
 
 <body>
+
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand bg-dark">
         <div class="container-fluid">
@@ -89,12 +120,13 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('002',0)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
-                                </p>
+                                <button onclick="disminuir(0)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(0)">+</button>
+                                <button onclick="product('002',0)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                             </div>
                         </div>
                     </div>
@@ -114,11 +146,13 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('003',1)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(1)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(1)">+</button>
+                                <button onclick="product('003',1)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -139,11 +173,13 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('001',2)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(2)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(2)">+</button>
+                                <button onclick="product('001',2)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -164,11 +200,13 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('004',3)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(3)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(3)">+</button>
+                                <button onclick="product('004',3)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -189,11 +227,13 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('005',4)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(4)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(4)">+</button>
+                                <button onclick="product('005',4)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -214,11 +254,13 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('006',5)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(5)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(5)">+</button>
+                                <button onclick="product('006',5)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -239,11 +281,13 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('007',6)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(6)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(6)">+</button>
+                                <button onclick="product('007',6)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -264,11 +308,13 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('008',7)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(7)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%; border-radius: 15%;">
+                                <button onclick="aumentar(7)">+</button>
+                                <button onclick="product('008',7)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -289,11 +335,13 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
-                                        style="width: 30%;">
-                                    <button onclick="product('009',8)" class="btn btn-primary" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
+                                <button onclick="disminuir(8)">-</button>
+                                <input type="number" name="cantidad" class="cantidad" value="1" readonly
+                                    style="width: 30%;  border-radius: 15%;">
+                                <button onclick="aumentar(8)">+</button>
+                                <button onclick="product('009',8)" class="btn btn-primary" type="button"
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
                             </div>
                         </div>
@@ -308,12 +356,15 @@
         <div class="row">
             <div class="col-md-4" id="cajas">
                 <div class="card baseBlock">
-                    <img class="card-img-top" alt="caja-fresas" style="height: 180px; width: 80%; display: block; margin-left: 10%;"
-                        src="./img/caja-fresas.png" data-holder-rendered="true">
+                    <img class="card-img-top" alt="caja-fresas"
+                        style="height: 180px; width: 80%; display: block; margin-left: 10%;" src="./img/caja-fresas.png"
+                        data-holder-rendered="true">
                     <div class="card-body">
                         <h4 class="card-title">Caja de fresas</h4>
                         <p class="card-text" style="text-align: justify;">0,9 Kg <br><b>Precio:</b> 14,00€</p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            onclick="box(14,'Caja de fresas')">Añadir</a>
                     </div>
                 </div>
             </div>
@@ -321,25 +372,27 @@
                 <div class="card baseBlock">
                     <img class="card-img-top" alt="caja-naranjas"
                         style="height: 180px; width: 80%; display: block; margin-left: 10%;"
-                        src="./img/caja-naranjas.png"
-                        data-holder-rendered="true">
+                        src="./img/caja-naranjas.png" data-holder-rendered="true">
                     <div class="card-body">
                         <h4 class="card-title">Caja de naranjas</h4>
                         <p class="card-text" style="text-align: justify;">8 Kg <br><b>Precio:</b> 12,25€</p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            onclick="box(12.25,'Caja de naranjas')">Añadir</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card baseBlock">
                     <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"
-                        style="height: 180px; width: 100%; display: block;"
-                        src="./img/caja-peras.png"
+                        style="height: 180px; width: 100%; display: block;" src="./img/caja-peras.png"
                         data-holder-rendered="true">
                     <div class="card-body">
                         <h4 class="card-title">Caja de peras</h4>
                         <p class="card-text" style="text-align: justify;">5 Kg <br><b>Precio:</b> 7,55€</p>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            onclick="box(7.55,'Caja de peras')">Añadir</a>
                     </div>
                 </div>
             </div>
@@ -394,7 +447,7 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <table class="table rounded">
+            <table class="table" id="tablaprueba">
                 <thead class="table-dark">
                     <tr>
                         <th>Nombre del producto</th>
@@ -402,8 +455,9 @@
                         <th>Cantidad</th>
                     </tr>
                 </thead>
-                <tbody id="tabla">
-                    <tr></tr>
+                <tbody>
+                    <tr>
+                    </tr>
                 </tbody>
             </table>
             <div>
