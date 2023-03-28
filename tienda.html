@@ -30,7 +30,7 @@
         var cantidad = document.getElementsByClassName("cantidad").item(idC).value;
         var producto = DataStorage.get(idP);
         var nombre = "fila" + idFila;
-        var insertar = '<tr><td>' + producto.name + '</td><td>' + producto.price + '</td><td>' + cantidad + '</td><td><button onclick="eliminarFila(' + "'" + nombre + "'," + cantidad + ',' + producto.price + ')">Eliminar</button></td></tr>';
+        var insertar = '<tr><td>' + producto.name + '</td><td>' + producto.price + '</td><td>' + cantidad + '</td><td><button style="border: none;" onclick="eliminarFila(' + "'" + nombre + "'," + cantidad + ',' + producto.price + ')"><img src="./img/papelera.png" alt="papelera" style="width:400%;"></button></td></tr>';
         var componente = document.createElement("tr");
         componente.setAttribute("id", nombre);
         componente.innerHTML = insertar;
@@ -43,10 +43,10 @@
     }
 
     function box(precio, nombre) {
-        var nombre = "fila" + idFila;
-        var insertar = '<tr><td>' + nombre + '</td><td>' + precio + '</td><td>1</td><td><button onclick="eliminarFila(' + "'" + nombre + "',1," + precio + ')">Eliminar</button></td></tr>';
+        var nombreF = "fila" + idFila;
+        var insertar = '<tr><td>' + nombre + '</td><td>' + precio + '</td><td>1</td><td><button style="border: none;" onclick="eliminarFila(' + "'" + nombreF + "',1," + precio + ')"><img src="./img/papelera.png" alt="papelera" style="width:400%;"></button></td></tr>';
         var componente = document.createElement("tr");
-        componente.setAttribute("id", nombre);
+        componente.setAttribute("id", nombreF);
         componente.innerHTML = insertar;
         document.getElementById('tablaprueba').appendChild(componente);
         var precio = getPrecioF() + (precio * 1);
@@ -117,7 +117,7 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Tienda -->
     <h2 class="text-bg-light p-3 text-center" id="tienda">Tienda</h2>
     <section class="section services-section" id="services">
@@ -433,7 +433,7 @@
                         <p class="card-text" style="text-align: justify;">Contenido: 6 Kg de pera de variedad
                             Conferencia.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            aria-controls="offcanvasRight" class="btn btn-primary btn-shadow"
                             onclick="box(9.50,'Caja de peras')">Añadir</a>
                     </div>
                 </div>
@@ -449,7 +449,7 @@
                         <p class="card-text">Esta caja contiene:<br>-1Kg Plátanos<br>-1Kg Manzanas <br>-1Kg Peras
                             <br>-1.5Kg Mandarinas <br>-1.5Kg Naranjas</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            aria-controls="offcanvasRight" class="btn btn-primary btn-shadow"
                             onclick="box(28,'Caja de fruta variada')">Añadir</a>
                     </div>
                 </div>
@@ -464,7 +464,7 @@
                         <p class="card-text">Esta caja contiene: <br>-2Kg Patatas <br>-1Kg Cebollas <br>-2Kg Tomates
                             <br>-1Kg Zanahorias <br> </p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            aria-controls="offcanvasRight" class="btn btn-primary btn-shadow"
                             onclick="box(26,'Caja de verduras')">Añadir</a>
                     </div>
                 </div>
@@ -481,7 +481,7 @@
                             Peras <br>-1 Lechuga -1 Coliflor <br>-1Kg Tomates -1kg Zanahorias <br>-1Kg Berenjena -1Kg
                             Calabacín</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn btn-primary"
+                            aria-controls="offcanvasRight" class="btn btn-primary btn-shadow"
                             onclick="box(45.75,'Caja de fruta y verdura')">Añadir</a>
                     </div>
                 </div>
