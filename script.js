@@ -1,4 +1,4 @@
-function () {
+(function () {
     "use strict";
 
     var cookieAlert = document.querySelector(".cookie-alert");

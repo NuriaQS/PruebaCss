@@ -14,6 +14,7 @@
 </head>
 <script src="datos.js"></script>
 <script>
+
   function guardar() {
     var id = document.getElementById("id").value;
     var nombre = document.getElementById("nombre").value;
@@ -26,18 +27,26 @@
     DataStorage.set(id, user);
 
     const user2 = DataStorage.get(id);
-    console.log(user2.id);
-    console.log(user2.name);
-    console.log(user2.price);
-    console.log(user2.aisle);
 
     var linea = document.createElement("tr");
     linea.innerHTML = fila;
     document.getElementById("tabla").appendChild(linea);
   }
+
+  function listar() {
+    console.log(localStorage.length);
+    for (let index = 0; index < localStorage.length; index++) {
+      var element = DataStorage.get("00" + (index + 1));
+      var fila = "<tr><th>" + element.id + "<th><td>" + element.name + "</td><td>" + element.price + "€/KG</td><td>" + element.aisle + "</td></tr>";
+      var linea = document.createElement("tr");
+      linea.innerHTML = fila;
+      document.getElementById("tabla").appendChild(linea);
+    }
+  }
+
 </script>
 
-<body>
+<body onload="listar()">
   <!-- Menu -->
   <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
     <div class="container-fluid">
@@ -161,60 +170,6 @@
           </tr>
         </thead>
         <tbody id="tabla">
-          <tr>
-            <th>001</th>
-            <td>Plátanos</td>
-            <td>1.25€/KG</td>
-            <td>P2</td>
-          </tr>
-          <tr>
-            <th>002</th>
-            <td>Manzanas</td>
-            <td>2.00€/KG</td>
-            <td>P2</td>
-          </tr>
-          <tr>
-            <th>003</th>
-            <td>Peras</td>
-            <td>0.75€/KG</td>
-            <td>P2</td>
-          </tr>
-          <tr>
-            <th>004</th>
-            <td>Melón</td>
-            <td>1.15€/KG</td>
-            <td>P3</td>
-          </tr>
-          <tr>
-            <th>005</th>
-            <td>Alcachofa</td>
-            <td>0.95€/KG</td>
-            <td>P2</td>
-          </tr>
-          <tr>
-            <th>006</th>
-            <td>Mandarina</td>
-            <td>0.65€/KG</td>
-            <td>P1</td>
-          </tr>
-          <tr>
-            <th>007</th>
-            <td>Naranja</td>
-            <td>0.70€/KG</td>
-            <td>P2</td>
-          </tr>
-          <tr>
-            <th>008</th>
-            <td>Sandía</td>
-            <td>1.25€/KG</td>
-            <td>P3</td>
-          </tr>
-          <tr>
-            <th>009</th>
-            <td>Fresa</td>
-            <td>1.45€/KG</td>
-            <td>P1</td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -240,7 +195,8 @@
                 <p><b>Precio:</b> 0,75€/Kg</p>
                 <div class="separator clear-left">
                   <button class="btn btn-primary btn-shadow btn-rounded w-md" id="boton">
-                    <a class="btn-link" href="tienda.html" style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
+                    <a class="btn-link" href="tienda.html"
+                      style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
                   </button>
                 </div>
                 <div class="clearfix"></div>
@@ -262,7 +218,8 @@
                 <p><b>Precio:</b> 0,75€/Kg</p>
                 <div class="separator clear-left">
                   <button class="btn btn-primary btn-shadow btn-rounded w-md" id="boton">
-                    <a class="btn-link" href="tienda.html" style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
+                    <a class="btn-link" href="tienda.html"
+                      style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
                   </button>
                 </div>
                 <div class="clearfix"></div>
@@ -284,20 +241,19 @@
                 <p><b>Precio:</b> 0,75€/Kg</p>
                 <div class="separator clear-left">
                   <button class="btn btn-primary btn-shadow btn-rounded w-md" id="boton">
-                    <a class="btn-link" href="tienda.html" style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
+                    <a class="btn-link" href="tienda.html"
+                      style="text-decoration: none; color: #ffffff; text-align: center;">Tienda</a>
                   </button>
                 </div>
-                <div class="clearfix"></div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
   <!-- Contacto -->
-  <h2 class="text-bg-light p-3 text-center">Contáctanos</h2>
+  <h2 class="text-bg-light p-3 text-center" style="margin-top: -25%;">Contáctanos</h2>
   <div class="contacto">
     <div class="row text-center">
       <div class="col-sm-4">
@@ -402,6 +358,8 @@
   </div>
   <!-- Botón flotante -->
   <a href="#" class="boton"><img src="./img/up-arrow.png" alt="flecha"></a>
+
+  <script src="script.js"></script>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

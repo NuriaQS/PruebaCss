@@ -11,131 +11,33 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 
+<script src="datos.js"></script>
 <script>
     var precioF = 0;
+    var filaTb = 0;
     function setPrecioF(precio) {
         this.precioF = precio;
     }
     function getPrecioF() {
         return precioF;
     }
-    function Manzanas() {
-        var cantidad = document.getElementById("cantidadM").value;
-        var fila = "<tr><th>Manzana</td><td>2.00€/KG</td><td>" + cantidad + '</td></tr>';
+
+    function product(idP, idC) {
+        var cantidad = document.getElementsByClassName("cantidad").item(idC).value;
+        var producto = DataStorage.get(idP);
+        var fila = "<tr><th>" + producto.name + '</td><td style="flex-wrap: nowrap"><div id="precio">' + producto.price + '</div>€/KG</td><td id="cantidad" >' + cantidad + '</td></tr>';
         var linea = document.createElement("tr");
         linea.innerHTML = fila;
         document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 2);
+        var precio = getPrecioF() + (cantidad * producto.price);
         setPrecioF(precio);
         var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
         var resultado = document.createElement("p");
         resultado.innerHTML = resultadoMos;
         document.getElementById("resultado").replaceChildren(resultado);
+        filaTb++;
     }
-    function Peras() {
-        var cantidad = document.getElementById("cantidadPr").value;
-        var fila = "<tr><th>Peras</td><td>0.75€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 0.75);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
-    function Platano() {
-        var cantidad = document.getElementById("cantidadPl").value;
-        var fila = "<tr><th>Platano</td><td>1.25€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 1.25);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
-    function Melones() {
-        var cantidad = document.getElementById("cantidadMe").value;
-        var fila = "<tr><th>Melon</td><td>1.15€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 1.15);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
-    function Alcachofas() {
-        var cantidad = document.getElementById("cantidadAl").value;
-        var fila = "<tr><th>Alcachofas</td><td>0.95€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 0.95);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
-    function Mandarinas() {
-        var cantidad = document.getElementById("cantidadMan").value;
-        var fila = "<tr><th>Mandarina</td><td>0.99€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 0.99);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
-    function Naranjas() {
-        var cantidad = document.getElementById("cantidadNar").value;
-        var fila = "<tr><th>Naranja</td><td>0.70€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 0.7);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
-    function Sandias() {
-        var cantidad = document.getElementById("cantidadSan").value;
-        var fila = "<tr><th>Sandia</td><td>3.00€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 3);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
-    function Fresas() {
-        var cantidad = document.getElementById("cantidadFr").value;
-        var fila = "<tr><th>Fresas</td><td>1.45€/KG</td><td>" + cantidad + '</td></tr>';
-        var linea = document.createElement("tr");
-        linea.innerHTML = fila;
-        document.getElementById("tabla").appendChild(linea);
-        var precio = getPrecioF() + (cantidad * 1.45);
-        setPrecioF(precio);
-        var resultadoMos = "<p>Precio Total = " + getPrecioF() + "€</p>";
-        var resultado = document.createElement("p");
-        resultado.innerHTML = resultadoMos;
-        document.getElementById("resultado").replaceChildren(resultado);
-    }
+
     function MostrarPrecioF() {
         var mostrar = "<p>EL precio total es de: " + getPrecioF() + "€<p>";
         var resultado = document.createElement("p");
@@ -146,7 +48,7 @@
 
 <body>
     <!-- Menu -->
-    <nav class="navbar navbar-dark sticky-top navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-dark sticky-top navbar-expand bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img src="img/logoTienda.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
@@ -157,6 +59,11 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.html">Catálogo</a>
+                    </li>
+                    <li class="carrito">
+                        <a class="navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight" style="position: absolute;align-items: end;"><img
+                                src="img/carrito-de-compras.png" alt="logo"></a>
                     </li>
                 </ul>
             </div>
@@ -182,9 +89,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadM" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Manzanas()" class="btn btn-primary" type="button"
+                                    <button onclick="product('002',0)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -207,9 +114,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadPr" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Peras()" class="btn btn-primary" type="button"
+                                    <button onclick="product('003',1)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -232,9 +139,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadPl" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Platano()" class="btn btn-primary" type="button"
+                                    <button onclick="product('001',2)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -257,9 +164,9 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadMe" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Melones()" class="btn btn-primary" type="button"
+                                    <button onclick="product('004',3)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -282,9 +189,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadAl" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Alcachofas()" class="btn btn-primary" type="button"
+                                    <button onclick="product('005',4)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -307,9 +214,9 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadMan" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Mandarinas()" class="btn btn-primary" type="button"
+                                    <button onclick="product('006',5)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -332,9 +239,9 @@
                                 <p>Pasillo: P2</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadNar" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Naranjas()" class="btn btn-primary" type="button"
+                                    <button onclick="product('007',6)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -357,9 +264,9 @@
                                 <p>Pasillo: P3</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadSan" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Sandias()" class="btn btn-primary" type="button"
+                                    <button onclick="product('008',7)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -382,9 +289,9 @@
                                 <p>Pasillo: P1</p>
                             </div>
                             <div class="col col-lg">
-                                <p>Cantidad <input type="text" name="cantidad" id="cantidadFre" value="1"
+                                <p>Cantidad <input type="text" name="cantidad" class="cantidad" value="1"
                                         style="width: 30%;">
-                                    <button onclick="Fresas()" class="btn btn-primary" type="button"
+                                    <button onclick="product('009',8)" class="btn btn-primary" type="button"
                                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                         aria-controls="offcanvasRight" style="margin-top: -2%;">Añadir</button>
                                 </p>
@@ -431,11 +338,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="emergenteFinal">
-                    
+
                     <p>El precio total de su compra es de</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="location.reload()">Finalizar compra</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="location.reload()">Finalizar compra</button>
                 </div>
             </div>
         </div>
@@ -445,7 +353,7 @@
     <div class="container-fluid" style="background-color: #161515;color: white;" id="contacto">
         <footer class="row row-cols-5 py-3  border-top">
             <div class="col-1">
-                <a class="navbar-brand" href="index.html"><img src="logoTienda.png" alt="logo"
+                <a class="navbar-brand" href="index.html"><img src="img/logoTienda.png" alt="logo"
                         style="height: 25%;width: 50%;margin-top: 50%;"></a>
             </div>
             <div class="col">
