@@ -447,3 +447,13 @@ img {
   transform: translateY(0%);
   transition-delay: 1000ms;
 }
+/* Cajas preparadas */
+#cajas{
+  padding-bottom: 5%;
+}
+#cajas-2{
+  padding-bottom: 5%;
+}
+.card-title{
+  color: #20247b;
+}
