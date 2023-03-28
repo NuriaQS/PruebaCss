@@ -91,11 +91,11 @@ img {
 .counter-section p {
   font-weight: 500;
   margin: 0;
-  color: #fe4f6c;
+  color: #ff7e96;
 }
 
 .theme-color {
-  color: #fe4f6c;
+  color: #ff7e96;
 }
 
 .section {
@@ -163,7 +163,7 @@ img {
 .logo i,
 .question-q-box,
 .social-circle li a:hover {
-  background-color: #fe4f6c !important;
+  background-color: #ff7e96 !important;
 }
 
 .title-box .title-alt,
@@ -173,11 +173,11 @@ img {
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active,
 .navbar-custom .navbar-nav li.active a {
-  color: #fe4f6c;
+  color: #ff7e96;
 }
 
 .btn-primary {
-  border: 1px solid #fe4f6c !important;
+  border: 1px solid #ff7e96 !important;
   margin-top: 15px;
 }
 
@@ -199,8 +199,8 @@ img {
 .open>.dropdown-toggle.btn-primary.focus,
 .open>.dropdown-toggle.btn-primary:focus,
 .open>.dropdown-toggle.btn-primary:hover {
-  background-color: #e03350 !important;
-  border: 1px solid #e03350 !important;
+  background-color: #fe4f6c !important;
+  border: 1px solid #fe4f6c !important;
 }
 
 .btn-shadow.btn-primary {
