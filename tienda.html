@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tienda</title>
+    <link rel="shortcut icon" href="./logoTienda.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
 <script src="datos.js"></script>
 <script>
     var precioF = 0;
@@ -69,7 +72,7 @@
     }
 
     function MostrarPrecioF() {
-        var mostrar = "<p>EL precio total es de: " + getPrecioF() + "€<p>";
+        var mostrar = "<p>El precio total es de: " + getPrecioF() + "€<p>";
         var resultado = document.createElement("p");
         resultado.innerHTML = mostrar;
         document.getElementById("emergenteFinal").replaceChildren(resultado);
@@ -81,7 +84,7 @@
     <!-- Menu -->
     <nav class="navbar navbar-dark sticky-top navbar-expand bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/logoTienda.png" alt="logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="./img/logoTiendaFondo.png" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -91,9 +94,11 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.html">Catálogo</a>
                     </li>
-                    <li class="carrito">
+                </ul>
+                <ul>
+                    <li class="nav-item">
                         <a class="navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" style="position: absolute;align-items: end;"><img
+                            aria-controls="offcanvasRight"><img
                                 src="img/carrito-de-compras.png" alt="logo"></a>
                     </li>
                 </ul>
@@ -359,12 +364,15 @@
                     <img class="card-img-top" alt="caja-fresas"
                         style="height: 180px; width: 80%; display: block; margin-left: 10%;" src="./img/caja-fresas.png"
                         data-holder-rendered="true">
-                    <div class="card-body">
-                        <h4 class="card-title">Caja de fresas</h4>
-                        <p class="card-text" style="text-align: justify;">0,9 Kg <br><b>Precio:</b> 14,00€</p>
+                    <div class="card-body"> 
+
+                        <h2 class="card-title">Caja de fresas</h2>
+                        <h4 class="card-price">14,00€</h4>
+                        <p class="card-text" style="text-align: justify;">Contenido: 0,9 Kg de fresas.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                             aria-controls="offcanvasRight" class="btn btn-primary"
                             onclick="box(14,'Caja de fresas')">Añadir</a>
+
                     </div>
                 </div>
             </div>
@@ -374,8 +382,9 @@
                         style="height: 180px; width: 80%; display: block; margin-left: 10%;"
                         src="./img/caja-naranjas.png" data-holder-rendered="true">
                     <div class="card-body">
-                        <h4 class="card-title">Caja de naranjas</h4>
-                        <p class="card-text" style="text-align: justify;">8 Kg <br><b>Precio:</b> 12,25€</p>
+                        <h2 class="card-title">Caja de naranjas</h2>
+                        <h4 class="card-price">12,25€</h4>
+                        <p class="card-text" style="text-align: justify;">Contenido: 8 Kg de naranjas para zumo.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                             aria-controls="offcanvasRight" class="btn btn-primary"
                             onclick="box(12.25,'Caja de naranjas')">Añadir</a>
@@ -384,56 +393,60 @@
             </div>
             <div class="col-md-4">
                 <div class="card baseBlock">
-                    <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"
-                        style="height: 180px; width: 100%; display: block;" src="./img/caja-peras.png"
+
+                    <img class="card-img-top" alt="caja-peras"
+                        style="height: 180px; width: 80%; display: block; margin-left: 10%;"
+                        src="./img/caja-peras.png"
                         data-holder-rendered="true">
                     <div class="card-body">
-                        <h4 class="card-title">Caja de peras</h4>
-                        <p class="card-text" style="text-align: justify;">5 Kg <br><b>Precio:</b> 7,55€</p>
+                        <h2 class="card-title">Caja de pera conferencia</h2>
+                        <h4 class="card-price">9,50€</h4>
+                        <p class="card-text" style="text-align: justify;">Contenido: 6 Kg de pera de variedad Conferencia.</p>
                         <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                             aria-controls="offcanvasRight" class="btn btn-primary"
                             onclick="box(7.55,'Caja de peras')">Añadir</a>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-4" id="cajas-2">
                 <div class="card baseBlock">
-                    <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"
-                        style="height: 180px; width: 100%; display: block;"
-                        src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15fb4f80579%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15fb4f80579%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22118.0859375%22%20y%3D%2297.35%22%3E318x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                    <img class="card-img-top" alt="caja-fruta"
+                        style="height: 200px; width: 80%; display: block; margin-left: 10%;"
+                        src="./img/fruta-variada.png"
                         data-holder-rendered="true">
                     <div class="card-body">
-                        <h4 class="card-title">Caja variada de fruta</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h2 class="card-title">Caja de fruta variada</h2>
+                        <h4 class="card-price">28,00€</h4>
+                        <p class="card-text">Esta caja contiene:<br>-1Kg Plátanos<br>-1Kg Manzanas <br>-1Kg Peras <br>-1.5Kg Mandarinas <br>-1.5Kg Naranjas</p>
                         <a href="#" class="btn btn-primary">Añadir</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card baseBlock">
-                    <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"
-                        style="height: 180px; width: 100%; display: block;"
-                        src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15fb4f80579%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15fb4f80579%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22118.0859375%22%20y%3D%2297.35%22%3E318x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                    <img class="card-img-top" alt="caja-verdura"
+                        style="height: 220px; width: 100%; display: block;"
+                        src="./img/caja-verduras.png"
                         data-holder-rendered="true">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h2 class="card-title">Caja de verduras</h2>
+                        <h4 class="card-price">26,00€</h4>
+                        <p class="card-text">Esta caja contiene: <br>-2Kg Patatas <br>-1Kg Cebollas <br>-2Kg Tomates <br>-1Kg Zanahorias <br> </p>
                         <a href="#" class="btn btn-primary">Añadir</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card baseBlock">
-                    <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"
-                        style="height: 180px; width: 100%; display: block;"
-                        src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15fb4f80579%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15fb4f80579%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22118.0859375%22%20y%3D%2297.35%22%3E318x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                    <img class="card-img-top" alt="verdura-fruta"
+                        style="height: 200px; width: 60%; display: block; margin-left: 20%;"
+                        src="./img/verdura-fruta.png"
                         data-holder-rendered="true">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h2 class="card-title">Caja de fruta y verdura</h2>
+                        <h4 class="card-price">45,75€</h4>
+                        <p class="card-text">Esta caja contiene: <br>-1Kg Naranjas -1Kg Fresón <br>-1Kg Manzana -1Kg Peras <br>-1 Lechuga -1 Coliflor <br>-1Kg Tomates -1kg Zanahorias <br>-1Kg Berenjena -1Kg Calabacín</p>
                         <a href="#" class="btn btn-primary">Añadir</a>
                     </div>
                 </div>
@@ -451,7 +464,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th>Nombre del producto</th>
-                        <th>Precio del producto</th>
+                        <th>Precio</th>
                         <th>Cantidad</th>
                     </tr>
                 </thead>
@@ -492,8 +505,8 @@
     <div class="container-fluid" style="background-color: #161515;color: white;" id="contacto">
         <footer class="row row-cols-5 py-3  border-top">
             <div class="col-1">
-                <a class="navbar-brand" href="index.html"><img src="img/logoTienda.png" alt="logo"
-                        style="height: 25%;width: 50%;margin-top: 50%;"></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logoTiendaFondo.png" alt="logo"
+                    style="height: 25%;width: 60%;margin-top: 50%;"></a>
             </div>
             <div class="col">
                 <h5>Menú</h5>
