@@ -14,7 +14,11 @@
 </head>
 <script src="datos.js"></script>
 <script>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> cb8623aeb1f78aef34f5979cfd79d29e9a851f0e
   function guardar() {
     var id = document.getElementById("id").value;
     var nombre = document.getElementById("nombre").value;
@@ -34,6 +38,7 @@
   }
 
   function listar() {
+<<<<<<< HEAD
     console.log(localStorage.length);
     for (let index = 0; index < localStorage.length; index++) {
       var element = DataStorage.get("00" + (index + 1));
@@ -44,6 +49,14 @@
     }
   }
 
+=======
+    var cantidad = localStorage.length;
+    for (let index = 0; index < cantidad.length; index++) {
+      var element = DataStorage.get("00"+index);
+      var fila = "<tr><th>"element.id+"<th><td>"+element.name+"</td><td>"+element.price+"€/KG</td><td>"+element.aisle+"</td></tr>"
+    }
+  }
+>>>>>>> cb8623aeb1f78aef34f5979cfd79d29e9a851f0e
 </script>
 
 <body onload="listar()">
